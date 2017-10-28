@@ -1,11 +1,14 @@
+
 /* Some minor re-design for zncstrap */
 body {
   padding-top: 80px;
 }
+
 #footer {
   height: 60px;
   padding-top: 30px;
 }
+
 /* for BindHosts textarea */
 textarea.form-control {
   height: auto;
@@ -13,16 +16,17 @@ textarea.form-control {
   white-space: -moz-pre-wrap;
   white-space: pre-wrap;
 }
+
 /* for Traffic page */
 .progress {
   margin-bottom: 0px;
 }
-/* Switch & SwitchMini checkbox re-design */
 
-.checkboxSwitch,
-.checkboxSwitchMini {
+/* Switch & SwitchMini checkbox re-design */
+.checkboxSwitch, .checkboxSwitchMini {
 	position: relative;
 }
+
 .checkboxSwitch label {
 	display: block;
 	width: 20px;
@@ -43,6 +47,7 @@ textarea.form-control {
 	-moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
 	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
 }
+
 .checkboxSwitchMini label {
 	display: block;
 	width: 13px;
@@ -63,6 +68,7 @@ textarea.form-control {
 	-moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
 	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
 }
+
 .checkboxSwitch input[type=checkbox]:checked + label,
 .checkboxSwitchMini input[type=checkbox]:checked + label {
 	background: #5cb85c;
