@@ -6,6 +6,16 @@ This is the official Hivecom ZNC theme. It is based off of a skin from
 modified to fit the Hivecom design. As well as that it fixes some bugs the
 original had and improves the general legibility of information.
 
+## Screenshots ##
+
+![](https://github.com/catlinman/hivecom-znc/blob/master/screenshots/splash.png)
+
+![](https://github.com/catlinman/hivecom-znc/blob/master/screenshots/stats.png)
+
+![](https://github.com/catlinman/hivecom-znc/blob/master/screenshots/networks.png)
+
+![](https://github.com/catlinman/hivecom-znc/blob/master/screenshots/settings.png)
+
 ## Installation ##
 
 Copy the contents of the znc directory to */usr/share/znc/*. This path might
