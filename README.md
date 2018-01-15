@@ -8,13 +8,13 @@ original had and improves the general legibility of information.
 
 ## Screenshots ##
 
-![](https://github.com/catlinman/hivecom-znc/blob/master/screenshots/splash.png)
+![](https://github.com/catlinman/hivecom-znc/blob/master/screenshots/splash.jpg)
 
-![](https://github.com/catlinman/hivecom-znc/blob/master/screenshots/stats.png)
+![](https://github.com/catlinman/hivecom-znc/blob/master/screenshots/stats.jpg)
 
-![](https://github.com/catlinman/hivecom-znc/blob/master/screenshots/networks.png)
+![](https://github.com/catlinman/hivecom-znc/blob/master/screenshots/networks.jpg)
 
-![](https://github.com/catlinman/hivecom-znc/blob/master/screenshots/settings.png)
+![](https://github.com/catlinman/hivecom-znc/blob/master/screenshots/settings.jpg)
 
 ## Installation ##
 
