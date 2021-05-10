@@ -65,6 +65,15 @@
 						</div>
 					</div>
 
+                    <div class="form-group">
+					<label for="inputAuthOnlyViaModule" class="col-sm-2 control-label">Auth Only Via Module</label>
+                        <div class="switch">
+                            <input type="checkbox" name="authonlyviamodule" id="inputAuthOnlyViaModule" class="cmn-toggle cmn-toggle-round-flat"
+                                title="<? FORMAT "Allow user authentication by external modules only, disabling built-in password authentication." ?>"
+                                <? IF AuthOnlyViaModule ?>checked="checked" <? ENDIF ?><? IF !ImAdmin ?>disabled="disabled" <? ENDIF ?>/>
+                            <label for="inputAuthOnlyViaModule" class="col-sm-2 control-label"></label>
+                        </div>
+                    </div>
 
 					<div class="form-group">
 					<label for="inputAllowedIP" class="col-sm-2 control-label">Allowed IPs:</label>
@@ -261,9 +270,24 @@
 					</div>
 
 					<div class="form-group">
-					<label for="inputBufferSize" class="col-sm-2 control-label">Buffer Size:</label>
+					<label for="inputBufferSize" class="col-sm-2 control-label">Channel Buffer Size:</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="inputBufferSize" name="bufsize" value="<? VAR BufferCount ?>" min="0" placeholder="This is the amount of lines that the playback buffer will store before dropping off the oldest line. The buffers are stored in the memory by default." />
+							<div class="alert alert-info help-block">Empty = use standard value</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+					<label for="inputmaxQueryBuffers" class="col-sm-2 control-label">Max Query Buffers:</label>
+						<div class="col-sm-10">
+							<input class="form-control" type="number" id="inputmaxQueryBuffers" name="maxquerybuffers" value="<? VAR MaxQueryBuffers ?>" class="third" min="0" placeholder="Maximum number of query buffers. 0 is unlimited."/>
+						</div>
+					</div>
+
+					<div class="form-group">
+					<label for="inputQueryBufSize" class="col-sm-2 control-label">Query Buffer Size:</label>
+						<div class="col-sm-10">
+							<input class="form-control" type="number" id="inputQueryBufSize" name="maxquerybufsize" value="<? VAR QueryBufferSize ?>" class="third" min="0" placeholder="Maximum number of query buffers. 0 is unlimited."/>
 							<div class="alert alert-info help-block">Empty = use standard value</div>
 						</div>
 					</div>
@@ -343,16 +367,16 @@
 					</div>
 
 					<div class="form-group">
-					<label for="inputmaxIRCnet" class="col-sm-2 control-label">Max IRC Networks Number:</label>
+					<label for="inputNoTrafficTimeout" class="col-sm-2 control-label">Timeout before reconnect:</label>
 						<div class="col-sm-10">
-							<input class="form-control" type="number" id="inputmaxIRCnet" name="maxnetworks" value="<? VAR MaxNetworks ?>" min="0" placeholder="Maximum number of IRC networks allowed for this user." <? IF !ImAdmin ?>disabled="disabled"<? ENDIF ?> />
+							<input class="form-control" type="number" id="inputNoTrafficTimeout" name="notraffictimeout" value="<? VAR NoTrafficTimeout ?>" class="third" min="0" placeholder="Seconds ZNC waits until it declares that the connection timed out after a ping."/>
 						</div>
 					</div>
 
 					<div class="form-group">
-					<label for="inputmaxQueryBuffers" class="col-sm-2 control-label">Max Query Buffers:</label>
+					<label for="inputmaxIRCnet" class="col-sm-2 control-label">Max IRC Networks Number:</label>
 						<div class="col-sm-10">
-							<input class="form-control" type="number" id="inputmaxQueryBuffers" name="maxquerybuffers" value="<? VAR MaxQueryBuffers ?>" class="third" min="0" placeholder="Maximum number of query buffers. 0 is unlimited."/>
+							<input class="form-control" type="number" id="inputmaxIRCnet" name="maxnetworks" value="<? VAR MaxNetworks ?>" min="0" placeholder="Maximum number of IRC networks allowed for this user." <? IF !ImAdmin ?>disabled="disabled"<? ENDIF ?> />
 						</div>
 					</div>
 
@@ -410,7 +434,7 @@
 					<label for="inputSkins" class="col-sm-2 control-label">Skin(s):</label>
 						<div class="col-sm-10">
 							<? IF SkinLoop ROWS > 1 ?>
-							<select class="form-control" name="skin">
+							<select class="form-control" id="inputSkins" name="skin">
 								<option value="">- Global -</option>
 									<? LOOP SkinLoop ?>
 										<option value="<? VAR Name ?>"<? IF Checked ?> selected="selected"<? ENDIF ?>><? IF Name == "_default_" ?>Default<? ELSE ?><? VAR Name ?><? ENDIF ?></option>
